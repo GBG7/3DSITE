@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="main/mcpfp.png" type="image/svg+xml">
+    <title>FetchPedia Gallery</title>
+  <style>
+  
+  body {
+    background-color:black;
+    image-rendering: pixelated;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:40px;
+    height: 80vh;
+    width:90vw;
+  }
+
+  .image-container img {
+    height: 50%;
+    width: 50%;
+  }
+  
+  .image-text {
+    text-align: center;
+    margin-top: 10px;
+    max-width:300px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-container button {
+    margin: 0 5px;
+  }
+
+  .button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+    transition:all 0.2s ease-in-out;
+  }
+
+  .button:hover {
+    color:gray;
+  }
+
+  .icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 5px;
+  }
+
+  .icon-button img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .icon-button img:hover {
+    opacity: 0.7;
+  }
+
+  
+  .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img id="galleryImage" src="" alt=""><br>
+    <p id="imageText" class="image-text"></p>
+  </div>
+  
+  <div class="button-container">
+    <a href="../index2.html" class="back-button">↲</a>
+    <button class="button" id="backButton">🡐</button>
+    <button class="button" id="nextButton">🡒</button>
+    <button class="icon-button" id="tinkercadButton">
+      <a href="https://imgur.com/a/robotics-stuff-4-da-site-hxekMNm/" target="_blank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDLUzshW2OpGKaJ6KPaEksyAvJJYyQbuaRYg&s" alt="Imgur">
+      </a>
+    </button>
+  </div>
+
+  <script> 
+    const images = [
+      { url: 'images/arduinocompletion.webp', text: "Programmed a remote-controlled Raspberry Pi Pico WH-based line following robot.\n\n Won 5th place TDSB-wide" },
+      {url: 'images/ceta.gif', text: 'Languages: Arduino C++\n\n Frameworks:MQTT WiFi (for connection between robot and Adafruit cloud-based controller), Adruino IDE\n\nHardware: CoolMCU Raspberry Pi Pico, Color Sensor, Motors & Controller Kit, Breadbord & Circuits'}
+    ];
+
+    let currentIndex = 0;
+
+    const imageElement = document.getElementById("galleryImage");
+    const textElement = document.getElementById("imageText");
+    const nextButton = document.getElementById("nextButton");
+    const backButton = document.getElementById("backButton");
+
+    function showCurrentImage() {
+      const currentImage = images[currentIndex];
+      imageElement.src = currentImage.url;
+      textElement.innerHTML = currentImage.text.replace(/\n/g, "<br>");
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showCurrentImage();
+    }
+
+    function showPreviousImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showCurrentImage();
+    }
+
+    nextButton.addEventListener("click", showNextImage);
+    backButton.addEventListener("click", showPreviousImage);
+
+    showCurrentImage();
+  </script>
+</body>
+</html>

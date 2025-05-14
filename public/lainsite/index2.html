@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>giant penis 12</title>
+  <link rel="icon" href="main/mcpfp.png" type="image/svg+xml">
+  <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
+
+  <style>
+      * {
+    margin:0px;
+    padding:0px;
+    letter-spacing:8px;
+    image-rendering: pixelated;
+    /* font-smooth: never; */
+    -webkit-font-smoothing: none;
+    /* -moz-osx-font-smoothing: grayscale; */    
+    }
+    
+  body {
+    /* bg_main2a grey grain */
+    background-image:url("bg/snowfallbg2.gif"); 
+    background-color:black;
+    color:#fee312;	
+
+    }
+
+    /* body {
+      background-color: black;
+      background-image: url(bg/bg_main2b.gif);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow-x: hidden;
+    } */
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        filter: blur(15px);
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0px);
+      }
+    }
+
+    .item {
+      height: auto;
+      display: block;
+      width: 33.333%;
+      height: 33.333vw;
+      float: left;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 16vw;
+      transition: all 0.3s ease-in-out;
+      animation: fadein 1s ease-out;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      box-shadow: inset 0 0 0px rgba(90, 34, 139, 1);
+    }
+
+    .item p {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      position: absolute;
+      bottom: 0;
+      line-height: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      letter-spacing: 5px;
+      font-style: italic;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+      white-space: nowrap;
+      z-index: 40;
+    }
+
+    .item:hover {
+      box-shadow: inset 0 0 100px rgba(90, 34, 139, 1);
+      background-position: center 40%;
+    }
+
+    .item:hover p {
+      letter-spacing: 7px;
+    }
+
+    /* around box text */
+    .hoverBoxX {
+      position: absolute;
+      background-color: rgba(90, 34, 139, 1); 
+      width: 0%;
+      height: 3px;
+      transition: all 0.3s ease-in-out;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 1.5px;
+    }
+
+    .item:hover .hoverBoxX {
+      width: 100%;
+    }
+
+    .hB {
+      bottom: 0;
+      height: 50px;
+    }
+
+    .hT {
+      top: 0;
+    }
+
+    .hoverBoxY {
+      position: absolute;
+      background-color: rgba(90, 34, 139, 1);
+      width: 3px;
+      height: 0%;
+      transition: all 0.3s ease-in-out;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 1.5px;
+    }
+
+    .item:hover .hoverBoxY {
+      height: 100%;
+    }
+
+    .hL {
+      left: 0;
+    }
+
+    .hR {
+      right: 0;
+    }
+
+    /* Custom Backgrounds for Items */
+    /* .redHall {
+      background-image: url("");
+    }
+
+    .whiteHall {
+      background-image: url("/images/icons/icons-white-hall-01.svg");
+    } */
+
+    .fetch {
+      background-image: url("main/mcpfp.png");
+    }
+
+    .nasasa{
+      background-image: url(images/nasaspace.jpg);
+
+    }
+    .vs2 {
+      background-image: url("main/mcpfp.png");
+
+    }
+    .gdscs {
+      background-image: url(images/GDSCUTM-Bracket.svg);
+    }
+
+    .rasacb{
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXYKMsiTes3I3dSo0Qu7MkXSuVKX_lTaVV6g&s);
+    }
+
+    .mmpf {
+      background-image: url(images/mathmatize.jpg);
+    }
+
+    .hovercraft{
+      background-image: url(images/hoverboard.webp);
+    }
+    .ceta {
+      background-image: url(images/arduinocompletion.webp);
+    }
+    .resume {
+      background-image: url(images/Screenshot\ 2024-11-02\ at\ 03-14-20\ TahaSarfrazResumeM.pdf.png);
+    }
+    .sigil {
+      position: fixed;
+     
+     
+      height: 32px;
+      width: 32px;
+      left: 10px;
+      top: 10px;
+      color: wheat;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: center;
+      transition: background-size 0.5s ease-in-out, transform 0.5s ease-in-out;
+      z-index: 9999;
+
+    }
+
+    .sigil:hover {
+      background-size: 32px;
+      transform: rotate(180deg);
+    }
+
+    @media only screen and (max-width: 600px) {
+      .item {
+        width: 100%;
+        height: 100vw;
+        background-size: 50vw;
+      }
+      .item:hover {
+        background-size: 52vw;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      .item {
+        width: 25%;
+        height: 25vw;
+        background-size: 12vw;
+      }
+      .item:hover {
+        background-size: 12.5vw;
+      }
+    }
+
+    
+    .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body class = 'bodyDir'>
+  <a class="sigil" href="index.html">↲</a>
+
+  <div class="content">
+    <!-- <a href="index.html" class="back-button">↲</a> -->
+    <a class="item fetch" href="dirRedirect/FetchPedia.html">
+      <p>FetchPedia</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class="item nasasa" href="dirRedirect/NASASpaceApps.html">
+      <p>NASA Space Apps </p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class="item vs2" href="dirRedirect/virtualsolar2.html">
+      <p>VIRTUAL SOLAR</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class="item gdscs" href="dirRedirect/gdscsite.html">
+      <p>GDSC website</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class="item rasacb" href="dirRedirect/rasacb.html">
+      <p>RASA Chatbot</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+    
+    <a class="item mmpf" href="dirRedirect/mmpf.html">
+      <p> Mathmatize Auto Poll </p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class = 'item hovercraft' href = 'dirRedirect/Hovercraft.html'>
+      <p> Arduino Hovercraft</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class = 'item ceta' href = 'dirRedirect/ceta.html'>
+      <p> Line Following Robot</p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+    <a class = 'item resume' href = 'dirRedirect/resume'>
+      <p> Taha's Resume </p>
+      <div class="hoverBoxX hT"></div>
+      <div class="hoverBoxX hB"></div>
+      <div class="hoverBoxY hL"></div>
+      <div class="hoverBoxY hR"></div>
+    </a>
+
+
+  </div>
+</body>
+</html>

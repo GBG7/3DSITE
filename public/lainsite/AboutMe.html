@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            flex-direction: column;
+        }
+        .video-container {
+            width: 80%;
+            height: auto;
+            max-height: 90vh;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            z-index: 10;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            z-index: 1;
+        }
+        .end-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .end-message a {
+            color: rgb(0, 174, 255);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">↲</a>
+    <div class="overlay-text">About Me</div>
+
+    <div class="video-container">
+        <video id="videoPlayer" controls autoplay width="100%">
+            <source src="main/lainAmIMe.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="end-message" id="endMessage">
+        Lol jk. To learn about me, go to my <a href="index2.html">projects directory!</a>
+    </div>
+
+    <script>
+        const video = document.getElementById("videoPlayer");
+        const endMessage = document.getElementById("endMessage");
+
+        video.addEventListener("timeupdate", function() {
+            if (video.currentTime >= 9) {
+                endMessage.style.display = "block";
+                video.removeEventListener("timeupdate", arguments.callee);
+            }
+        });
+    </script>
+</body>
+</html>

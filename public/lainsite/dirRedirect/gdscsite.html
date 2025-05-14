@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>NASA Space Apps</title>
+  <style>
+  
+  body {
+    background-color:black;
+    image-rendering: pixelated;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:40px;
+    height: 80vh;
+    width:90vw;
+  }
+
+  .image-container img {
+    height: auto;
+    max-height: 50vh;
+    width: auto;
+    max-width: 90vw;
+  }
+  
+  .image-text {
+    text-align: center;
+    margin-top: 10px;
+    max-width:300px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-container button {
+    margin: 0 5px;
+  }
+
+  .button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+    transition:all 0.2s ease-in-out;
+  }
+
+  .button:hover {
+    color:gray;
+  }
+
+  .github-button, .link-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .github-button img, .link-button img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .github-button img:hover, .link-button img:hover {
+    opacity: 0.7;
+  }
+  
+  .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img id="galleryImage" src="" alt="Image"><br>
+    <p id="imageText" class="image-text"></p>
+  </div>
+  
+  <div class="button-container">
+    <a href="../index2.html" class="back-button">↲</a>
+    <button class="button" id="backButton">🡐</button>
+    <button class="button" id="nextButton">🡒</button>
+    <button class="github-button" id="githubButton">
+      <a href="https://github.com/utmgdsc/website" target="_blank">
+        <img src="https://static-00.iconduck.com/assets.00/github-icon-1024x994-4h5sdmko.png" alt="GitHub">
+      </a>
+    </button>
+    <button class="link-button" id="linkButton">
+      <a href="https://www.gdscutm.com/" target="_blank">
+        <img src="images/link-48.png" alt="Website">
+      </a>
+    </button>
+  </div>
+
+  <script> 
+    const images = [
+      { url: '', text: "Helped maintain the GDSC UTM website. Solved 2 issues & had 4 pull requests in total. \n\nIncreased ease of maintainability through GitHub Actions and clear documentation,\n\nImproved accessibility through compliance with WCAG 2.0 (Level AA) standard by conducting extensive testing"},
+      { url: 'images/GDSCUTM-Bracket.svg', text: "Next.js App Router (React), JavaScript, CSS, Material UI" },
+      // {url: '', text: "Language: \n Framework: \n Etc: "}   
+    ];
+
+    let currentIndex = 0;
+
+    const imageElement = document.getElementById("galleryImage");
+    const textElement = document.getElementById("imageText");
+    const nextButton = document.getElementById("nextButton");
+    const backButton = document.getElementById("backButton");
+
+    function showCurrentImage() {
+  const currentImage = images[currentIndex];
+  imageElement.src = currentImage.url;
+  textElement.innerHTML = currentImage.text.replace(/\n/g, "<br>");
+}
+
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showCurrentImage();
+    }
+
+    function showPreviousImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showCurrentImage();
+    }
+
+    nextButton.addEventListener("click", showNextImage);
+    backButton.addEventListener("click", showPreviousImage);
+
+    showCurrentImage();
+  </script>
+</body>
+</html>

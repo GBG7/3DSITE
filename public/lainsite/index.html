@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<title>⌈T a H a ' s　Ｗｉｒｅｄ　 Ｗｅb s ｉ t ｅ⌋</title>
+<link rel="icon" type="image/png" href="main/mcpfp.png" sizes="64x64" />
+<link rel="icon" type="image/png" href="main/mcpfp.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="main/mcpfp.png" sizes="16x16" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link type="text/css" rel="stylesheet" media="screen and (max-width: 800px)" href="/stylesheetU800px.css">
+<!-- <audio src="/main/NihigoAngelicEdited.m4a" autoplay loop>
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio> -->
+</head>
+
+<body>
+<div id="navbar">
+  <p class="blinkFrame blink"> &lceil; </p>
+  <p class="blinkFrame blink"> &rceil; </p>
+  <h1> <span class="wiredAnim"> &lceil;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    </span> <span class="wdel1s"> am <s>Lain</s></span> <br>
+    <span class="wdel2s"> TAHA</span> <span class="wdel3s"> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;<br>
+    </span> <br />
+    <br />
+    <span id="note"> <span class="del6s">║</span><span class="del5s">▒</span><span class="del4s">░</span> <span class="del2s">║</span><span class="del1s5ms">▒</span><span class="del1s">░</span> <span class="Bfast">☪🍁</span> <span class="del1s">░</span><span class="del1s5ms">▒</span><span class="del2s">║</span> <span class="del4s">░</span><span class="del5s">▒</span><span class="del6s">║</span> </span> </h1>
+  <br />
+  <h5>⌈TAHA's SITE⌋</h5>
+  <br />
+  <p class="copy"> <a href="https://github.com/GBG7" target="_blank">github.com/GBG7 </a></p>
+  <p class="copy"> <a href="https://www.linkedin.com/in/taha-sarfraz-54b429274/" target="_blank">LockedIn</a></p>
+  <p class="blinkFrame blink"> &lfloor; </p>
+  <p class="blinkFrame blink"> &rfloor; </p>
+  <img class="logo" src="main/mcpfp.png" />
+  <!-- color = "#fee312" -->
+  <p id="navline">|<a href="AboutMe.html">About Me</a> ︱ <a href="Contact.html">Contact Me</a> ︱ <a href="#help section">Help</a> ︱ <a href="/tracklist.html">Tracklist</a>|<br />
+    ︱ <a href="/godisnoise.html">Elohim/YWHH/Allah</a> |</p>
+    <br>
+  <hr />
+  <br />
+  View My Tech Work<br>
+  <a href="index2.html">[Connect]</a> <br />
+  <br />
+</div>
+<a href="">
+<div id="enterWired"></div>
+</a>
+
+
+<div class="article" id = 'help section'>
+  <div class="iconA"></div>
+  <h1>Q: What is this</h1>
+  </h5>
+  <br />
+  <br />
+  <hr />
+  <br /><br /><br />
+<p>It's a passion project of Lain, AALCC, glitch core nostalgic website, <br> [Connect], or click on Lain <br> S.O fauux neocities<br><br> Incomplete <br><br><br>
+  <br><br>
+</div>
+  <div class="article" id="feedback-section">
+  <h2>Give Me Feedback</h2>
+  <form id="feedback-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="feedback-display">
+    <h3>Feedback Received:</h3>
+  </div>
+</div>
+
+<script>
+  document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    document.getElementById('feedback-form').reset();
+
+    const feedbackEntry = document.createElement('div');
+    feedbackEntry.classList.add('feedback-entry');
+    feedbackEntry.innerHTML = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong> ${message}</p>
+      <p><strong>Response:</strong> [Your response here]</p>
+      <hr>
+    `;
+
+    document.getElementById('feedback-display').appendChild(feedbackEntry);
+  });
+</script>
+
+<style>
+  /* Additional styling for feedback section */
+  #feedback-section {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+  }
+
+  #feedback-section label {
+    color: #fee312;
+  }
+
+  #feedback-display {
+    margin-top: 20px;
+  }
+
+  .feedback-entry {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+  }
+
+  .feedback-entry p {
+    margin: 5px 0;
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Frutiger-Aero Portfolio</title>
+
+<style>
+/* ----------- GLOBAL “FRUTIGER AERO” BACKGROUND ----------- */
+:root{
+  --xp-blue-1:#1d64f2;
+  --xp-blue-2:#4fb1ff;
+  --xp-blue-3:#cfe8ff;
+  --title-bar:#0a4fc2;
+  --title-bar-gradient:#3b90ff;
+  --body-font:'Segoe UI', Tahoma, Verdana, sans-serif;
+  --window-bg:rgba(255,255,255,0.6);
+}
+html,body{
+  height:100%; margin:0; overflow:auto;
+  scrollbar-width:thin;            /* Firefox */
+  scrollbar-color:var(--xp-blue-1) #d0d0d0;
+}
+body{
+  font-family:var(--body-font);
+  backdrop-filter:blur(40px);
+}
+body::before{                      /* Blurred aero back-layer */
+  content:"";
+  position:fixed; inset:0;
+  background:
+    radial-gradient(at 30% 30%, var(--xp-blue-2), transparent 60%),
+    radial-gradient(at 70% 70%, var(--xp-blue-3), transparent 55%),
+    radial-gradient(at 70% 20%, #58ffc8, transparent 60%),
+    radial-gradient(at 20% 80%, #ff8ad8, transparent 55%),
+    #91c9ff;
+  filter:blur(60px);
+  z-index:-1;
+}
+
+/* WebKit scrollbar (Chrome/Edge/Safari) */
+body::-webkit-scrollbar{width:10px;}
+body::-webkit-scrollbar-track{background:#d0d0d0;}
+body::-webkit-scrollbar-thumb{
+  background:var(--xp-blue-1);
+  border-radius:5px;
+  border:2px solid #d0d0d0;
+}
+
+/* ----------- HEADER STRIP ----------- */
+header{
+  text-align:center;
+  color:white;
+  padding:1rem 0 1.4rem;
+  background:linear-gradient(90deg,var(--title-bar),var(--title-bar-gradient));
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+  user-select:none;
+}
+header h1{margin:.3rem 0 0;font-size:2.2rem;letter-spacing:.5px;}
+header p {margin:.4rem 0 0;font-size:1rem;opacity:.8;}
+
+/* ----------- XP-STYLE WINDOW ----------- */
+.window{
+  width:clamp(250px, 90%, 500px);
+  margin:2rem auto;
+  border:2px solid #295dd5;
+  border-radius:4px;
+  background:var(--window-bg);
+  backdrop-filter:blur(10px);
+  overflow:hidden;
+  box-shadow:4px 4px 12px rgba(0,0,0,.35);
+  position:relative;
+}
+
+/* Title bar */
+.window .title{
+  display:flex; align-items:center; gap:.4rem;
+  padding:.3rem .5rem;
+  background:linear-gradient(180deg,var(--title-bar-gradient),var(--title-bar));
+  color:#fff; font-weight:600; font-size:.93rem; cursor:move;
+  user-select:none;
+}
+.title img{width:14px; height:14px;}
+.title .buttons{
+  margin-left:auto; display:flex; gap:4px;
+}
+.buttons span{
+  width:14px; height:14px; border:1px solid #fff; border-radius:1px;
+  background:#67a4ff; display:inline-block;
+}
+.buttons span:hover{background:#ff6565;}
+
+/* Content area */
+.window .content{
+  max-height:260px;
+  overflow:auto;
+  padding:.9rem 1rem 1.2rem;
+  font-size:.9rem;
+}
+/* inner scrollbars */
+.content::-webkit-scrollbar{width:8px;}
+.content::-webkit-scrollbar-track{background:#efefef;}
+.content::-webkit-scrollbar-thumb{background:var(--xp-blue-2); border-radius:4px;}
+
+section:not(:last-child){margin-bottom:.6rem;}
+section h3{margin:.2rem 0 .3rem;font-size:1rem;border-bottom:1px solid #8b8b8b;}
+ul{margin:0 0 .4rem 1rem; padding:0;}
+li{margin:.25rem 0;}
+
+/* ----------- DRAG-N-DROP (optional, can remove JS) ----------- */
+.window{position:absolute;} /* allow dragging */
+</style>
+</head>
+
+<body>
+<header>
+  <h1>YOUR NAME</h1>
+  <p>Full-Stack Developer &amp; Student | Toronto, Canada</p>
+</header>
+
+<!-- SOCIAL WINDOW -->
+<div class="window" style="top:120px;left:6%;">
+  <div class="title">
+    <img src="data:image/gif;base64,R0lGODlhEAAQAJEAAAAAAP///
+    /wAAACH5BAEAAAIALAAAAAAQABAAAAIojI+py+0Po5y02ouzPgUAOw==" alt="">
+    Social
+    <div class="buttons"><span></span><span></span><span></span></div>
+  </div>
+  <div class="content">
+    <section>
+      <h3>Find me on</h3>
+      <ul>
+        <li>GitHub – <a href="#">github.com/username</a></li>
+        <li>LinkedIn – <a href="#">linkedin.com/in/username</a></li>
+        <li>Twitter – <a href="#">@username</a></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- PROJECTS WINDOW -->
+<div class="window" style="top:180px;right:4%;">
+  <div class="title">
+    <img src="data:image/gif;base64,R0lGODlhEAAQAJEAAAAAAP///
+    /wAAACH5BAEAAAIALAAAAAAQABAAAAIojI+py+0Po5y02ouzPgUAOw==" alt="">
+    Projects
+    <div class="buttons"><span></span><span></span><span></span></div>
+  </div>
+  <div class="content">
+    <section>
+      <h3>Highlighted Work</h3>
+      <ul>
+        <li><strong>StellarSphere</strong> – Smart escrow wallet on Stellar testnet</li>
+        <li><strong>DeepSeek-Med-8B Fine-Tune</strong> – LoRA medical Q&amp;A</li>
+        <li><strong>React-Three Gallery</strong> – 3D GSAP-animated portfolio</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- TECH STACKS WINDOW -->
+<div class="window" style="top:420px;left:18%;">
+  <div class="title">
+    <img src="data:image/gif;base64,R0lGODlhEAAQAJEAAAAAAP///
+    /wAAACH5BAEAAAIALAAAAAAQABAAAAIojI+py+0Po5y02ouzPgUAOw==" alt="">
+    Tech&nbsp;Stacks
+    <div class="buttons"><span></span><span></span><span></span></div>
+  </div>
+  <div class="content">
+    <section>
+      <h3>Languages</h3>
+      <ul><li>Python • Java • Rust • TypeScript</li></ul>
+    </section>
+    <section>
+      <h3>Frameworks &amp; Tools</h3>
+      <ul>
+        <li>React / Next.js, GSAP, Three.js</li>
+        <li>PyTorch, CUDA, Hugging Face</li>
+        <li>Stellar SDK &amp; Soroban</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- RESUME WINDOW -->
+<div class="window" style="top:520px;right:16%;">
+  <div class="title">
+    <img src="data:image/gif;base64,R0lGODlhEAAQAJEAAAAAAP///
+    /wAAACH5BAEAAAIALAAAAAAQABAAAAIojI+py+0Po5y02ouzPgUAOw==" alt="">
+    Resumé
+    <div class="buttons"><span></span><span></span><span></span></div>
+  </div>
+  <div class="content">
+    <p>Download the full PDF&nbsp;→ <a href="resume.pdf" download>resume.pdf</a></p>
+    <p>Currently seeking ML internship roles for Fall 2025.</p>
+  </div>
+</div>
+
+<!-- ---------- Optional tiny JS to make windows draggable ---------- -->
+<script>
+document.querySelectorAll('.window').forEach(win=>{
+  const bar=win.querySelector('.title');
+  let offsetX=0,offsetY=0,isDrag=false;
+
+  bar.addEventListener('pointerdown',e=>{
+    isDrag=true;
+    offsetX=e.clientX-win.offsetLeft;
+    offsetY=e.clientY-win.offsetTop;
+    win.style.zIndex=Date.now();         /* bring to front */
+    bar.setPointerCapture(e.pointerId);
+  });
+  bar.addEventListener('pointermove',e=>{
+    if(!isDrag)return;
+    win.style.left=(e.clientX-offsetX)+'px';
+    win.style.top =(e.clientY-offsetY)+'px';
+  });
+  bar.addEventListener('pointerup',()=>isDrag=false);
+});
+</script>
+</body>
+</html>

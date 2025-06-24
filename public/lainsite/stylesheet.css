@@ -152,8 +152,9 @@ hr {
 	
 	
 .article {
-	width:800px;
-	background-color:#00000000;
+	width: 100%;         /* was 800px */
+  	max-width: 800px;    /* keeps the full size for normal desktop view */
+  	background-color:#00000000;
 	background-image:url("main/bg-rip-02.gif");
 	height:auto;
 	margin-left:auto;

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<meta name="viewport" content="width=668, initial-scale=0.30">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=0.5"> -->
 <title>⌈T a H a ' s　Ｗｉｒｅｄ　 Ｗｅb s ｉ t ｅ⌋</title>
 <link rel="icon" type="image/png" href="main/mcpfp.png" sizes="64x64" />
 <link rel="icon" type="image/png" href="main/mcpfp.png" sizes="32x32" />
@@ -24,7 +25,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;<br>
     </span> <br />
     <br />
-    <span id="note"> <span class="del6s">║</span><span class="del5s">▒</span><span class="del4s">░</span> <span class="del2s">║</span><span class="del1s5ms">▒</span><span class="del1s">░</span> <span class="Bfast">☪🍁</span> <span class="del1s">░</span><span class="del1s5ms">▒</span><span class="del2s">║</span> <span class="del4s">░</span><span class="del5s">▒</span><span class="del6s">║</span> </span> </h1>
+    <span id="note"> <span class="del6s">║</span><span class="del5s">▒</span><span class="del4s">░</span> <span class="del2s">║</span><span class="del1s5ms">▒</span><span class="del1s">░</span> <span class="Bfast">☪🀨</span> <span class="del1s">░</span><span class="del1s5ms">▒</span><span class="del2s">║</span> <span class="del4s">░</span><span class="del5s">▒</span><span class="del6s">║</span> </span> </h1>
   <br />
   <h5>⌈TAHA's SITE⌋</h5>
   <br />
@@ -59,49 +60,51 @@
 <p>It's a passion project of Lain, AALCC, glitch core nostalgic website, <br> [Connect], or click on Lain <br> S.O fauux neocities<br><br> Incomplete <br><br><br>
   <br><br>
 </div>
-  <div class="article" id="feedback-section">
-  <h2>Give Me Feedback</h2>
-  <form id="feedback-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+<!-- ─── Leave a Message ─────────────────────────────────────────── -->
+<div class="article" id="feedback-section">
+  <h2>Leave a Message</h2>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+  <form id="message-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required /><br /><br />
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    <label for="email">Email (optional):</label>
+    <input type="email" id="email" name="email" /><br /><br />
 
-    <button type="submit">Submit</button>
+    <label for="message">Message:</label><br />
+    <textarea id="message" name="message" rows="4" required></textarea><br /><br />
+
+    <button type="submit">Send</button>
   </form>
 
-  <div id="feedback-display">
-    <h3>Feedback Received:</h3>
+  <div id="message-display">
+    <h3>Messages:</h3>
   </div>
 </div>
 
 <script>
-  document.getElementById('feedback-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+  /* simple in-page message log */
+  document.getElementById('message-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const user = document.getElementById('username').value;
+    const mail = document.getElementById('email').value;
+    const text = document.getElementById('message').value;
 
-    document.getElementById('feedback-form').reset();
+    e.target.reset();
 
-    const feedbackEntry = document.createElement('div');
-    feedbackEntry.classList.add('feedback-entry');
-    feedbackEntry.innerHTML = `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Message:</strong> ${message}</p>
-      <p><strong>Response:</strong> [Your response here]</p>
-      <hr>
+    const entry = document.createElement('div');
+    entry.className = 'feedback-entry';
+    entry.innerHTML = `
+      <p><strong>User:</strong> ${user}</p>
+      ${mail ? `<p><strong>Email:</strong> ${mail}</p>` : ''}
+      <p><strong>Message:</strong> ${text}</p>
+      <hr />
     `;
-
-    document.getElementById('feedback-display').appendChild(feedbackEntry);
+    document.getElementById('message-display').appendChild(entry);
   });
 </script>
+
 
 <style>
   /* Additional styling for feedback section */
